@@ -1,0 +1,23 @@
+/* Fix export and print button visibility */
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.rdt_Export,
+.rdt_Export button {
+  color: #000 !important;
+  font-size: 10px;
+  font-weight: 500;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  margin: 8px 4px;
+  border-radius: 5px;
+  z-index: 999;
+  position: relative;
+  cursor: pointer;
+}
+
+.rdt_Export button:hover {
+  background-color: #ddd;
+}

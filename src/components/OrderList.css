@@ -1,0 +1,41 @@
+/* src/components/OrderList.css */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-bar select,
+.filter-bar input,
+.filter-bar .react-datepicker-wrapper {
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 38px;
+}
+
+.filter-bar button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid #999;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-bar button:hover {
+  background-color: #e0e0e0;
+}
+.datepicker-wrapper {
+  z-index: 2;
+}
+
+.filter-bar input,
+.filter-bar .react-datepicker-wrapper {
+  min-width: 200px;
+}
+
