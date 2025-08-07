@@ -1,6 +1,6 @@
 // src/App.jsx
 import { Routes, Route } from "react-router-dom";
-
+import Homepage from "./components/Homepage"; // 🔁 Add this at the top
 import NewOrderForm from "./components/NewOrderForm";
 import OrderList from "./components/OrderList";
 import CompletedOrders from "./components/CompletedOrders";
@@ -50,7 +50,7 @@ export default function App() {
       <Route path="/inventory-stock-list" element={<InventoryStockList />} />
       <Route path="/inventory-stock" element={<StocktakeUpdateForm />} />
       <Route path="/material-usage-tracker" element={<MaterialUsageTracker />} />
-
+      <Route path="/" element={<Homepage />} />
       {/* 🔹 Admin Tools & Subpages */}
       <Route path="/admin-tools" element={<AdminTools />} />
       <Route path="/system-health" element={<SystemHealth />} />
