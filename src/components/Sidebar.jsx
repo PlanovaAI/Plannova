@@ -1,7 +1,8 @@
-// src/components/Sidebar.jsx
+// src/components/Sidebar.jsx 
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
+import logo from "../assets/Plannova2.png"; // ✅ Import logo image
 
 export default function Sidebar() {
   const navigate = useNavigate();
@@ -37,7 +38,19 @@ export default function Sidebar() {
         fontFamily: "Segoe UI",
       }}
     >
-      <h2 style={{ fontSize: "1rem", marginBottom: "1.5rem" }}>📋 Plannova</h2>
+      {/* ✅ Logo inserted here */}
+      <img
+  src={logo}
+  alt="Plannova Logo"
+  style={{
+    width: "210px",              // ⬅️ Increase size here
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: "1.5rem",     // ⬅️ Auto left/right centers it
+    display: "block",
+  }}
+/>
+
 
       <button style={buttonStyle} onClick={() => navigate("/new-order")}>
         ➕ New Order
@@ -99,11 +112,9 @@ export default function Sidebar() {
         📊 Analytics Dashboard
       </button>
 
-      {/* ⚙️ Admin Tools Button */}
       <button style={buttonStyle} onClick={() => navigate("/admin-tools")}>
-  ⚙️ Admin Tools
-</button>
-
+        ⚙️ Admin Tools
+      </button>
 
       <button style={buttonStyle} onClick={handleLogout}>
         🚪 Logout
