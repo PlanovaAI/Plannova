@@ -1,7 +1,7 @@
 // src/components/InventoryStockList.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { CSVLink } from "react-csv";
 import * as XLSX from "xlsx";
 import { useNavigate } from "react-router-dom";

@@ -1,4 +1,4 @@
-import Sidebar from "../components/Sidebar";
+
 import NewOrderForm from "../components/NewOrderForm";
 
 export default function Dashboard() {

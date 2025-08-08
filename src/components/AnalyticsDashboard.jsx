@@ -1,7 +1,7 @@
 // src/components/AnalyticsDashboard.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import {
   BarChart,
   Bar,

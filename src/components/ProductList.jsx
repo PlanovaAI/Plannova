@@ -1,7 +1,7 @@
 // src/components/ProductList.jsx
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);

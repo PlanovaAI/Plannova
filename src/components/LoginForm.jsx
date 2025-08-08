@@ -1,48 +1,59 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Add this
+import React, { useState } from "react";
 import { supabase } from "../supabaseClient";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [authError, setAuthError] = useState(null);
-  const navigate = useNavigate(); // ✅ Add this
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setAuthError(null);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    setError("");
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
     if (error) {
-      setAuthError(error.message);
-    } else {
-      navigate("/dashboard"); // ✅ Redirect on success
+      setError(error.message);
+      return;
     }
+
+    // ✅ Go straight to Orders after successful login
+    navigate("/orders");
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "2rem auto", textAlign: "center" }}>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+      <form onSubmit={handleLogin} style={{ width: "300px", textAlign: "center" }}>
+        <h2>🔐 Login</h2>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          style={{ width: "100%", marginBottom: "10px", padding: "8px" }}
           required
-          style={{ display: "block", width: "100%", marginBottom: "1rem", padding: "0.5rem" }}
         />
+
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          style={{ width: "100%", marginBottom: "10px", padding: "8px" }}
           required
-          style={{ display: "block", width: "100%", marginBottom: "1rem", padding: "0.5rem" }}
         />
-        {authError && <p style={{ color: "red" }}>{authError}</p>}
-        <button type="submit">Login</button>
+
+        <button type="submit" style={{ width: "100%", padding: "8px", backgroundColor: "#007bff", color: "#fff" }}>
+          Login
+        </button>
       </form>
     </div>
   );
 }
-

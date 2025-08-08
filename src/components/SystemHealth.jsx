@@ -1,6 +1,6 @@
 // src/components/SystemHealth.jsx
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+
 import { supabase } from "../supabaseClient";
 
 export default function SystemHealth() {

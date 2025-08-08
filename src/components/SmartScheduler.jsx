@@ -1,7 +1,7 @@
 // src/components/SmartScheduler.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { format, addDays } from "date-fns";
 import EditScheduleModal from "./EditScheduleModal";
 import { DndProvider, useDrag, useDrop } from "react-dnd";

@@ -1,7 +1,7 @@
 // src/components/NewOrderForm.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 
 export default function NewOrderForm() {
   const [form, setForm] = useState({

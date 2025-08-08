@@ -1,6 +1,6 @@
 // src/components/AdminTools.jsx
 import React from "react";
-import Sidebar from "./Sidebar";
+
 import { useNavigate } from "react-router-dom";
 
 export default function AdminTools() {

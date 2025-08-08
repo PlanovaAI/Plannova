@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import ManualSchedulingModal from "./ManualSchedulingModal";
 
 export default function OrderList() {

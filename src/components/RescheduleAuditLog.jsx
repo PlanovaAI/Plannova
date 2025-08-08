@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 
 export default function RescheduleAuditLog() {
   const [logs, setLogs] = useState([]);

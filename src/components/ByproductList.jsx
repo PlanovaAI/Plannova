@@ -1,7 +1,7 @@
 // Updated ByproductList.jsx with dropdown search options, total summary, and fixed form
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { format } from "date-fns";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";

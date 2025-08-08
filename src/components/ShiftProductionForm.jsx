@@ -1,7 +1,7 @@
 // src/components/ShiftProductionForm.jsx
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function ShiftProductionForm() {

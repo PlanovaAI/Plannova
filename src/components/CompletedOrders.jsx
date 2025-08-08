@@ -1,7 +1,7 @@
 // src/components/CompletedOrders.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { saveAs } from "file-saver";

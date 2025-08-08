@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { saveAs } from "file-saver";
 import * as XLSX from "xlsx";
 import DatePicker from "react-datepicker";

@@ -1,7 +1,7 @@
 // src/components/WIPList.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { CSVLink } from "react-csv";
 import { format } from "date-fns";
 import DatePicker from "react-datepicker";

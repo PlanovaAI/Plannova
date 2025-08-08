@@ -1,7 +1,7 @@
 // src/components/ProductionScheduleViewer.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 
 export default function ProductionScheduleViewer() {
   const [schedules, setSchedules] = useState([]);

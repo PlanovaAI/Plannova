@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 
 export default function ClientDataUpload() {
   const [status, setStatus] = useState("");
