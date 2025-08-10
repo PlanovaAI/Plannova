@@ -1,7 +1,7 @@
 // src/components/ProductList.jsx
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
@@ -64,7 +64,7 @@ export default function ProductList() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📦 Product Management</h2>
 

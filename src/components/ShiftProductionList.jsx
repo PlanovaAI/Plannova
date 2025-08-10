@@ -1,7 +1,7 @@
 // src/components/ShiftProductionList.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { CSVLink } from "react-csv";
 import { format } from "date-fns";
 import DatePicker from "react-datepicker";
@@ -137,7 +137,7 @@ export default function ShiftProductionList() {
 
   return (
     <div style={{ display: "flex", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📈 Shift End Record</h2>
         <div

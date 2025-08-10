@@ -1,7 +1,7 @@
 // src/components/ProductManagement.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { CSVLink } from "react-csv";
 import * as XLSX from "xlsx";
 import { format } from "date-fns";
@@ -114,7 +114,7 @@ export default function ProductManagement() {
 
   return (
     <div style={{ display: "flex", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📦 Product Management</h2>
 

@@ -1,7 +1,7 @@
 // src/components/ScheduleCalendar.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import EditScheduleModal from "./EditScheduleModal";
 
 export default function ScheduleCalendar() {
@@ -48,7 +48,7 @@ export default function ScheduleCalendar() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "1rem" }}>
         <h2>📆 Weekly Schedule Calendar</h2>
 

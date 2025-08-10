@@ -1,7 +1,7 @@
 // src/components/SmartScheduler.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { format, addDays } from "date-fns";
 import EditScheduleModal from "./EditScheduleModal";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
@@ -195,7 +195,7 @@ export default function SmartScheduler() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div style={{ display: "flex" }}>
-        <Sidebar />
+        
         <div style={{ flex: 1, padding: "1rem", position: "relative" }}>
           <h2 style={{ fontFamily: "Segoe UI" }}>📅 Smart Scheduler</h2>
           <table style={{ width: "100%", borderCollapse: "collapse", tableLayout: "fixed" }}>

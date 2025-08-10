@@ -1,6 +1,6 @@
 // src/components/AdminTools.jsx
 import React from "react";
-import Sidebar from "./Sidebar";
+
 import { useNavigate } from "react-router-dom";
 
 export default function AdminTools() {
@@ -23,7 +23,7 @@ export default function AdminTools() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "1rem", fontFamily: "Segoe UI" }}>
         <h2 style={{ marginBottom: "1rem" }}>⚙️ Admin Tools</h2>
 

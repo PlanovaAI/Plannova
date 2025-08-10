@@ -1,6 +1,6 @@
 // src/components/SystemHealth.jsx
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+
 import { supabase } from "../supabaseClient";
 
 export default function SystemHealth() {
@@ -89,7 +89,7 @@ export default function SystemHealth() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "1rem", fontFamily: "Segoe UI" }}>
         <h2 style={{ marginBottom: "1rem" }}>💻 System Health & Status</h2>
 

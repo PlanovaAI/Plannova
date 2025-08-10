@@ -1,7 +1,7 @@
 // src/components/ShiftProductionForm.jsx
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function ShiftProductionForm() {
@@ -88,7 +88,7 @@ export default function ShiftProductionForm() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <form onSubmit={handleSubmit} style={{ maxWidth: 350, margin: "0 auto", display: "flex", flexDirection: "column", gap: "0.75rem", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
           <h2 style={{ fontFamily: "Segoe UI", fontSize: "1.25rem" }}>📋 Shift End Production Entry</h2>

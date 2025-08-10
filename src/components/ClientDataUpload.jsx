@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 
 export default function ClientDataUpload() {
   const [status, setStatus] = useState("");
@@ -120,7 +120,7 @@ export default function ClientDataUpload() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📤 Client Data Upload</h2>
         <p>Upload your Excel file with sheets: Products, Plants, Shift Production, WIP, Byproducts, Inventory.</p>

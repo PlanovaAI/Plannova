@@ -1,7 +1,6 @@
 // src/components/NewOrderForm.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
 
 export default function NewOrderForm() {
   const [form, setForm] = useState({
@@ -89,62 +88,59 @@ export default function NewOrderForm() {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <Sidebar />
-      <div style={{ flex: 1, padding: "2rem" }}>
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            maxWidth: 350,
-            margin: "0 auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.75rem",
-            fontFamily: "Segoe UI",
-            fontSize: "0.8rem",
-          }}
+    <div style={{ flex: 1, padding: "2rem" }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          maxWidth: 350,
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.75rem",
+          fontFamily: "Segoe UI",
+          fontSize: "0.8rem",
+        }}
+      >
+        <h2 style={{ fontSize: "1.25rem" }}>📋 New Order Form</h2>
+
+        <label>Order Number</label>
+        <input type="text" value={form.order_number} disabled style={inputStyle} />
+
+        <label>Customer Name</label>
+        <input name="customer_name" value={form.customer_name} onChange={handleChange} required style={inputStyle} />
+
+        <label>Product</label>
+        <select
+          name="product_name"
+          value={form.product_name}
+          onChange={(e) => handleProductChange(e.target.value)}
+          required
+          style={inputStyle}
         >
-          <h2 style={{ fontSize: "1.25rem" }}>📋 New Order Form</h2>
+          <option value="">Select Product</option>
+          {products.map((p) => (
+            <option key={p.product_name} value={p.product_name}>
+              {p.product_name}
+            </option>
+          ))}
+        </select>
 
-          <label>Order Number</label>
-          <input type="text" value={form.order_number} disabled style={inputStyle} />
+        <label>Unit of Measure</label>
+        <input type="text" value={form.uom} name="uom" readOnly style={inputStyle} />
 
-          <label>Customer Name</label>
-          <input name="customer_name" value={form.customer_name} onChange={handleChange} required style={inputStyle} />
+        <label>Plant Name</label>
+        <input type="text" value={form.plant_name} name="plant_name" readOnly style={inputStyle} />
 
-          <label>Product</label>
-          <select
-            name="product_name"
-            value={form.product_name}
-            onChange={(e) => handleProductChange(e.target.value)}
-            required
-            style={inputStyle}
-          >
-            <option value="">Select Product</option>
-            {products.map((p) => (
-              <option key={p.product_name} value={p.product_name}>
-                {p.product_name}
-              </option>
-            ))}
-          </select>
+        <label>Quantity</label>
+        <input name="quantity" type="number" value={form.quantity} onChange={handleChange} required style={inputStyle} />
 
-          <label>Unit of Measure</label>
-          <input type="text" value={form.uom} name="uom" readOnly style={inputStyle} />
+        <label>Required By Date</label>
+        <input name="required_by" type="date" value={form.required_by} onChange={handleChange} required style={inputStyle} />
 
-          <label>Plant Name</label>
-          <input type="text" value={form.plant_name} name="plant_name" readOnly style={inputStyle} />
-
-          <label>Quantity</label>
-          <input name="quantity" type="number" value={form.quantity} onChange={handleChange} required style={inputStyle} />
-
-          <label>Required By Date</label>
-          <input name="required_by" type="date" value={form.required_by} onChange={handleChange} required style={inputStyle} />
-
-          <button type="submit" disabled={isSubmitting} style={buttonStyle}>
-            ✅ Submit Order
-          </button>
-        </form>
-      </div>
+        <button type="submit" disabled={isSubmitting} style={buttonStyle}>
+          ✅ Submit Order
+        </button>
+      </form>
     </div>
   );
 }

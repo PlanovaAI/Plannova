@@ -1,7 +1,7 @@
 // src/components/WIPList.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { CSVLink } from "react-csv";
 import { format } from "date-fns";
 import DatePicker from "react-datepicker";
@@ -130,7 +130,7 @@ export default function WIPList() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
         <h2>🔄 WIP Output Records</h2>
 

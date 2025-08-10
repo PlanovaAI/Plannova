@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import ManualSchedulingModal from "./ManualSchedulingModal";
 
 export default function OrderList() {
@@ -129,7 +129,7 @@ export default function OrderList() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem", fontFamily: "Segoe UI", fontSize: "0.75rem" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h2>📋 Orders List</h2>

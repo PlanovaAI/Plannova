@@ -1,7 +1,7 @@
 // src/components/MaterialUsageTracker.jsx
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CSVLink } from "react-csv";
@@ -69,7 +69,7 @@ export default function MaterialUsageTracker() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem", fontFamily: "Segoe UI", fontSize: "0.75rem" }}>
         <h2>📦 Material Usage Tracker</h2>
 

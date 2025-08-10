@@ -1,7 +1,7 @@
 // src/components/InventoryStockForm.jsx
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
-import Sidebar from "./Sidebar";
+
 import { useNavigate } from "react-router-dom";
 
 export default function InventoryStockForm() {
@@ -81,7 +81,7 @@ export default function InventoryStockForm() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📦 Inventory Stock Entry</h2>
         <form onSubmit={handleSubmit}>
