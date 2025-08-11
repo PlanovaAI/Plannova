@@ -1,97 +1,95 @@
 // src/components/Homepage.jsx
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "../supabaseClient";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { claimLock } from "../lib/sessionLock";
-import logo from "../assets/logo.png";
+import { supabase } from "../supabaseClient";
 
 export default function Homepage() {
   const navigate = useNavigate();
-
-  // Uncontrolled inputs to avoid autofill persistence
-  const emailRef = useRef(null);
-  const passRef  = useRef(null);
-
-  const [seed] = useState(() => Math.random().toString(36).slice(2, 8));
-  const emailName = useMemo(() => `email_${seed}`, [seed]);
-  const passName  = useMemo(() => `pass_${seed}`,  [seed]);
-
-  useEffect(() => {
-    const clear = () => {
-      if (emailRef.current) emailRef.current.value = "";
-      if (passRef.current)  passRef.current.value  = "";
-    };
-    clear();
-    const t = setTimeout(clear, 200);
-    return () => clearTimeout(t);
-  }, []);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const email = emailRef.current?.value?.trim() || "";
-    const password = passRef.current?.value || "";
-    if (!email || !password) return;
-
-    // 1) Supabase sign-in
     const { error } = await supabase.auth.signInWithPassword({ email, password });
+
     if (error) {
-      alert(error.message);
-      return;
+      setErrorMsg("❌ " + error.message);
+    } else {
+      setErrorMsg("");
+      navigate("/orders");
     }
-
-    // 2) Try to claim single-session lock; if blocked, just show message and stay here.
-    const lock = await claimLock();
-    if (!lock.ok) {
-      // IMPORTANT: do NOT signOut here. We want the existing (first) session to keep running.
-      alert("This account is already active on another device/tab. Please finish there or wait a couple of minutes.");
-      // optional: clear only the password
-      if (passRef.current) passRef.current.value = "";
-      return;
-    }
-
-    // 3) Proceed to app
-    if (emailRef.current) emailRef.current.value = "";
-    if (passRef.current)  passRef.current.value  = "";
-    navigate("/orders");
   };
 
   return (
-    <div style={{ fontFamily: "Segoe UI", display: "flex", flexDirection: "column", alignItems: "center", paddingTop: "3rem" }}>
-      <img src={logo} alt="Plannova Logo" style={{ width: 220, marginBottom: "1.5rem" }} />
-      <h2 style={{ marginBottom: 8 }}>Welcome to Plannova</h2>
-      <p style={{ marginTop: 0, color: "#666" }}>Intelligent Planning System</p>
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "100vh",
+      fontFamily: "Segoe UI",
+      background: "#f4f6f8",
+      padding: "2rem",
+      textAlign: "center"
+    }}>
+      {/* You can replace this with an <img src={logo} /> if needed */}
+      <h1 style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>
+        👋 Welcome to Plannova
+      </h1>
+      <p style={{ marginBottom: "2rem", fontSize: "1rem" }}>
+        Your intelligent production planning dashboard
+      </p>
 
       <form
         onSubmit={handleLogin}
-        autoComplete="off"
-        style={{ width: 300, background: "#f9f9f9", padding: "1rem", borderRadius: 8, border: "1px solid #ddd", marginTop: "1rem" }}
+        style={{
+          background: "#fff",
+          padding: "2rem",
+          borderRadius: "8px",
+          boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+          width: "300px"
+        }}
       >
-        {/* dummy traps for autofill */}
-        <input type="text" name="username" autoComplete="username" style={{ display: "none" }} />
-        <input type="password" name="password" autoComplete="current-password" style={{ display: "none" }} />
+        <h3 style={{ marginBottom: "1rem" }}>🔐 Login</h3>
+
+        {errorMsg && (
+          <p style={{ color: "red", fontSize: "0.9rem", marginBottom: "1rem" }}>
+            {errorMsg}
+          </p>
+        )}
 
         <input
-          ref={emailRef}
           type="email"
-          name={emailName}
           placeholder="Email"
-          autoComplete="off"
-          style={{ width: "100%", padding: 8, marginBottom: 8 }}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          style={{ width: "100%", marginBottom: "1rem", padding: "0.5rem" }}
         />
+
         <input
-          ref={passRef}
           type="password"
-          name={passName}
           placeholder="Password"
-          autoComplete="new-password"
-          style={{ width: "100%", padding: 8, marginBottom: 8 }}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          style={{ width: "100%", marginBottom: "1rem", padding: "0.5rem" }}
         />
 
         <button
           type="submit"
-          style={{ width: "100%", padding: 10, background: "#007bff", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer" }}
+          style={{
+            width: "100%",
+            padding: "0.6rem",
+            background: "#007bff",
+            color: "#fff",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer"
+          }}
         >
-          Login
+          🔓 Login
         </button>
       </form>
     </div>

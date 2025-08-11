@@ -114,7 +114,7 @@ export default function ProductManagement() {
 
   return (
     <div style={{ display: "flex", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📦 Product Management</h2>
 

@@ -48,7 +48,7 @@ export default function ScheduleCalendar() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "1rem" }}>
         <h2>📆 Weekly Schedule Calendar</h2>
 

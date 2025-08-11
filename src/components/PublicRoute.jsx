@@ -7,7 +7,7 @@ function isLocked() {
   return Date.now() < until;
 }
 
-export default function PrivateRoute({ children }) {
+export default function PublicRoute({ children }) {
   const [loading, setLoading] = useState(true);
   const [hasSession, setHasSession] = useState(false);
   const [tick, setTick] = useState(0);           // 👈 add
@@ -32,6 +32,6 @@ export default function PrivateRoute({ children }) {
   }, [location.pathname]);
 
   if (loading || isLocked()) return <div style={{ padding: "2rem", fontFamily: "Segoe UI" }}>Please wait…</div>;
-  if (!hasSession) return <Navigate to="/login" replace />;
+  if (hasSession) return <Navigate to="/dashboard" replace />;
   return children;
 }

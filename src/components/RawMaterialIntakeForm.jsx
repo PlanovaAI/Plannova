@@ -107,7 +107,7 @@ export default function NewOrderForm() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2 style={{ marginBottom: "1.5rem" }}>🆕 New Order Form</h2>
         <form

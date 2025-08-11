@@ -130,7 +130,7 @@ export default function WIPList() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
         <h2>🔄 WIP Output Records</h2>
 

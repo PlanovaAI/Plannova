@@ -69,7 +69,7 @@ export default function MaterialUsageTracker() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem", fontFamily: "Segoe UI", fontSize: "0.75rem" }}>
         <h2>📦 Material Usage Tracker</h2>
 

@@ -112,7 +112,7 @@ export default function ByproductList() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>♻️ By-products Records</h2>
 

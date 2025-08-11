@@ -81,7 +81,7 @@ export default function InventoryStockForm() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📦 Inventory Stock Entry</h2>
         <form onSubmit={handleSubmit}>

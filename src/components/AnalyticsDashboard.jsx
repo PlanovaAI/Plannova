@@ -73,7 +73,7 @@ export default function AnalyticsDashboard() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📊 Analytics Dashboard</h2>
 

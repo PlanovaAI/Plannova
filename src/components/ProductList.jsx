@@ -64,7 +64,7 @@ export default function ProductList() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📦 Product Management</h2>
 

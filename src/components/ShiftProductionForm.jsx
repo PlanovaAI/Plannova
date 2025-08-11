@@ -88,7 +88,7 @@ export default function ShiftProductionForm() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <form onSubmit={handleSubmit} style={{ maxWidth: 350, margin: "0 auto", display: "flex", flexDirection: "column", gap: "0.75rem", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
           <h2 style={{ fontFamily: "Segoe UI", fontSize: "1.25rem" }}>📋 Shift End Production Entry</h2>

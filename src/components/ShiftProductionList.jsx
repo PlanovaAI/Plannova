@@ -137,7 +137,7 @@ export default function ShiftProductionList() {
 
   return (
     <div style={{ display: "flex", fontFamily: "Segoe UI", fontSize: "0.8rem" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📈 Shift End Record</h2>
         <div

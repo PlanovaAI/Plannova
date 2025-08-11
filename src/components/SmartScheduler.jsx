@@ -195,7 +195,7 @@ export default function SmartScheduler() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div style={{ display: "flex" }}>
-        <Sidebar />
+        
         <div style={{ flex: 1, padding: "1rem", position: "relative" }}>
           <h2 style={{ fontFamily: "Segoe UI" }}>📅 Smart Scheduler</h2>
           <table style={{ width: "100%", borderCollapse: "collapse", tableLayout: "fixed" }}>

@@ -149,7 +149,7 @@ export default function InventoryStock() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "2rem" }}>
         <h2>📦 Inventory Stock</h2>
 

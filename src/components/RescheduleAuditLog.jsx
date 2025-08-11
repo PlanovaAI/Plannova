@@ -28,7 +28,7 @@ export default function RescheduleAuditLog() {
 
   return (
     <div style={{ display: "flex" }}>
-      <Sidebar />
+      
       <div style={{ flex: 1, padding: "1rem", fontFamily: "Segoe UI" }}>
         <h2 style={{ marginBottom: "1rem" }}>📜 Reschedule Audit Log</h2>
         {loading ? (
